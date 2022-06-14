@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">
+    <title>Output</title>
+</head>
+<body>
+<h1>Employee name</h1>
+
+<p>
+    <label>Name: <span th:text="${envelope.firstName}"> Bart</span>
+
+</label>
+<p>
+
+
+<h2>Status </h2>
+
+<label th:switch="${envelope.message}">
+
+    <p th:case="0">Faculty Member</p>
+    <p th:case="1">Staff Member</p>
+    <p th:case="2">Member</p>
+
+</label>
+
+    <a href="Input.html" th:href="@{Input}">Back to Input</a>
+</p>
+<br><br>
+    <footer>
+    <p>Programmer: Ryan Teixeira</p>
+    <p>Sheridan College</p>
+    </footer>
+
+</body>
+</html>

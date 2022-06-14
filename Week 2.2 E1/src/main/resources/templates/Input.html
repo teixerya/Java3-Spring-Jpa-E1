@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">
+    <title>Input</title>
+</head>
+<body>
+
+<h1>Employee name</h1>
+<form action="Output.html" th:action="@{Process}" th:object="${envelope}">
+
+    <div th:if="${#fields.hasErrors('*')}">
+        <h3 class="error">Input Errors</h3>
+        <ul>
+            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+        </ul>
+    </div>
+    <p>
+        <label for="fn">Name</label>
+        <input id="fn" th:field="*{firstName}">
+    </p>
+
+
+    <h2>Status</h2>
+    <p>
+        <label><input type="radio" th:field="*{message}" th:value="0">Faculty </label>
+        <label><input type="radio" th:field="*{message}" th:value="1">Staff </label>
+
+    </p>
+
+    <p>
+        <input type="submit" value="Send">
+    </p>
+
+</form>
+<br><br>
+
+<footer>
+    <p>Programmer: Ryan Teixeira</p>
+    <p>Sheridan College</p>
+</footer>
+
+</body>
+</html>
